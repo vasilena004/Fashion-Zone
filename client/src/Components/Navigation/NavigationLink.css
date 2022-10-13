@@ -1,0 +1,15 @@
+.MuiLink-root {
+    color: #69696A;
+    text-decoration: none;
+    font-size: 16px;
+    background: white;
+    padding: 15px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    margin-left: 8px;
+}
+
+.navigationLink:hover {
+    background: rgb(251, 248, 248);
+    color: #7c7c7c;
+}
