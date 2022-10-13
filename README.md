@@ -14,7 +14,6 @@ For server side:
  * to install all dependency run - npm install
  * to start the application run - npx nodemon
  
-Repository:
-
- 
+Repository Link:
+  https://github.com/vasilena004/Fashion-Zone
 
