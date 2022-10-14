@@ -19,6 +19,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import ProductForm from "./Components/Products/ProductForm";
+import Logout from "./Components/Logout/Logout";
 
 interface ProtectedRouteProps {
   redirectPath?: string;
@@ -78,13 +79,6 @@ const router = createBrowserRouter([
           {
             path: "cart",
             element: <Cart />,
-            children: [
-              // {
-              //   errorElement: <ErrorPage />,
-              //   path: ":productId",
-              //   element: <Cart/>,
-              // },
-            ],
           },
           {
             path: "favorites",
@@ -108,6 +102,14 @@ const router = createBrowserRouter([
               <PublicRoute>
                 <Login />
               </PublicRoute>
+            ),
+          },
+          {
+            path: "logout",
+            element: (
+              <ProtectedRoute>
+                <Logout />
+              </ProtectedRoute>
             ),
           },
           {

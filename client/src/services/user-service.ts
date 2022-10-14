@@ -46,6 +46,11 @@ class UserService extends ApiClientImpl<IdType, User>{
             body: JSON.stringify({ userId })
         })
     }
+    deleteUser(userId: string) {
+        return this.handleRequest(`${API_BASE_URL}/user-info/${userId}`, {
+            method: 'DELETE',
+        })
+    }
     getUser() {
         return this.handleRequest(`${API_BASE_URL}/user-info/`);
     }

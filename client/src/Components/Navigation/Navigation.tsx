@@ -22,8 +22,9 @@ const Navbar = () => {
 
   React.useEffect(() => {
     token = cookies.get("token");
+    console.log(isLoggedIn);
     setLoggedIn(token ? true : false);
-  }, [token]);
+  }, []);
 
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null

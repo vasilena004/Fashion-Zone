@@ -45,7 +45,7 @@ const schema = yup
   .required();
 
 export default function Login() {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   const {
     control,
@@ -61,11 +61,12 @@ export default function Login() {
     try {
       const user = await UserApi.login(loginData.email, loginData.password);
       cookies.set("token", user.token);
-      const savedUser=await UserApi.saveUser(user.user.id);
-      console.log("save",savedUser);
-      navigate("/api/")
+      const savedUser = await UserApi.saveUser(user.user.id);
+      console.log("save", savedUser);
+      console.log();
+      navigate("/api/");
     } catch (err) {
-      console.error(err)
+      console.error(err);
     }
   };
 
@@ -125,20 +126,20 @@ export default function Login() {
               type="password"
               error={errors.password?.message}
             />
-            <Button
-              variant="contained"
-              type="submit"
-              size="small"
-              disabled={!(isDirty && isValid)}
-              style={{
-                alignSelf: "center",
-                marginTop: "5px",
-                backgroundColor: "rgb(71, 11, 81)",
-                color: "white",
-              }}
-            >
-              Login
-            </Button>
+              <Button
+                variant="contained"
+                type="submit"
+                size="small"
+                disabled={!(isDirty && isValid)}
+                style={{
+                  alignSelf: "center",
+                  marginTop: "5px",
+                  backgroundColor: "rgb(71, 11, 81)",
+                  color: "white",
+                }}
+              >
+                Login
+              </Button>
 
             <Link
               to="/api/register"
